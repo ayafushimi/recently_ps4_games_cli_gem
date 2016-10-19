@@ -6,7 +6,7 @@ class RecentlyPs4Games::Game
   def initialize(game_hash)
     game_hash.each_with_index do |(k, v), i|
       self.send("#{k}=", v)
-      @id = i
+      @id = i + 1
     end
     @@all << self
   end
@@ -17,8 +17,10 @@ class RecentlyPs4Games::Game
     end
   end
 
-  def self.get_url_from_id
-
+  def self.get_detail_url_from_id(id)
+    self.all.detect do |game|
+      game.id == id
+    end.detail_url
   end
 
   def add_attributes(details_hash)
