@@ -16,5 +16,15 @@ class RecentlyPs4Games::Game
     end
   end
 
+  def add_attributes(details_hash)
+    details_hash.each do |k, v|
+      self.send("#{k}=", v)
+    end
+    self
+  end
+
+  def self.all
+    @@all
+  end
 
 end
