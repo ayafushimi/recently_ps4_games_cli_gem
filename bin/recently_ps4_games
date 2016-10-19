@@ -8,7 +8,7 @@ RecentlyPs4Games::CLI.new.call
 # # Draft
 # start
 # Scrape games list page
-  # get informations below
+  # get informations below -- Done
     # title
     # detail page url
 # display list of games
