@@ -1,12 +1,3 @@
-require 'pry'
-require 'open-uri'
-require 'nokogiri'
-require 'watir-webdriver'
-require 'phantomjs'
-
-module RecentlyPs4Games
-end
-
 class RecentlyPs4Games::Scraper
 
   def self.get_dynamic_page_html(url)
