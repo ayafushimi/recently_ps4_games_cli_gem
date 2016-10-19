@@ -7,18 +7,18 @@ RecentlyPs4Games::CLI.new.call
 
 # # Draft
 # start
-# Scrape games list page
-  # get informations below -- Done
+# Scrape games list page -- DONE --
+  # get informations of NEW and UPCOMING games
     # title
     # detail page url
 # display list of games
 # ask input for what game to inquire
-# Scrape game's detail page
-# get informations below
-  # discription
-  # Release Date
-  # Genre
-  # Publisher
-  # Developer
+# Scrape game's detail page -- making --
+  # get informations
+    # discription
+    # Release Date
+    # Genre
+    # Publisher
+    # Developer
 # display details
 # ask whether exit or list again

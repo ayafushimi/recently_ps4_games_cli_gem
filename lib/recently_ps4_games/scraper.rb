@@ -7,7 +7,6 @@ require 'phantomjs'
 module RecentlyPs4Games
 end
 
-
 class RecentlyPs4Games::Scraper
 
   def self.get_dynamic_page_html(url)
@@ -44,8 +43,23 @@ class RecentlyPs4Games::Scraper
     self.iterate_over_games_XML(upcoming_games)
   end
 
+  def self.scrape_details(url)
+    detail_page = Nokogiri::HTML(open(url))
+
+    binding.pry
+
+    # prod_meta = detail_page.css("div.prod-meta")
+
+    # discription : prod_meta.css("p.teaser").text
+    # release_info : prod_meta.css("ul.release-info li")
+    # Release Date : release_info.css("span.releasedate").text.delete("\n\t")
+    # Genre : release_info[1].children[2].text.delete("\n\t")
+    # Publisher : release_info[2].children[1].text.delete("\n\t")
+    # Developer : release_info[3].children[1].text.delete("\n\t")
+
+  end
 
 
 end
 
-RecentlyPs4Games::Scraper.new.class.scrape_upcoming_list("https://www.playstation.com/en-us/explore/games/ps4-games/")
+RecentlyPs4Games::Scraper.new.class.scrape_details("https://www.playstation.com/en-us/games/rise-of-the-tomb-raider-20-year-celebration-ps4/")
