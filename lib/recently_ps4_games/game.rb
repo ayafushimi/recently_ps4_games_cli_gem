@@ -10,4 +10,11 @@ class RecentlyPs4Games::Game
     @@all << self
   end
 
+  def self.create_by_games_arr(games_arr)
+    games_arr.each do |game|
+      self.new(game)
+    end
+  end
+
+
 end
