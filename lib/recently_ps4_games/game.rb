@@ -1,11 +1,12 @@
 class RecentlyPs4Games::Game
-  attr_accessor :title, :detail_url, :discription, :release_date, :genre, :publisher, :developer
+  attr_accessor :id, :title, :detail_url, :discription, :release_date, :genre, :publisher, :developer
 
   @@all = []
 
   def initialize(game_hash)
-    game_hash.each do |k, v|
+    game_hash.each_with_index do |(k, v), i|
       self.send("#{k}=", v)
+      @id = i
     end
     @@all << self
   end
@@ -14,6 +15,10 @@ class RecentlyPs4Games::Game
     games_arr.each do |game|
       self.new(game)
     end
+  end
+
+  def self.get_url_from_id
+
   end
 
   def add_attributes(details_hash)

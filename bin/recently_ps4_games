@@ -11,12 +11,12 @@ RecentlyPs4Games::CLI.new.call
   # get informations of NEW and UPCOMING games
     # title
     # detail page url
-# Make game instances
+# Make game instances -- DONE --
 # display list of games
   # use Game method
 # ask input for what game to inquire
 # Send request to Scraper class
-  # use Game class
+  # use Game method
 # Scrape game's detail page -- DONE --
   # get informations
     # discription
