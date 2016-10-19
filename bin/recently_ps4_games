@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/recently_ps4_games.rb'
+
+RecentlyPs4Games::CLI.new.call
