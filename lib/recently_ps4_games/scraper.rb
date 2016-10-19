@@ -37,11 +37,15 @@ class RecentlyPs4Games::Scraper
   end
 
   def self.scrape_upcoming_list(url)
+    list_page = Nokogiri::HTML(self.get_dynamic_page_html(url))
+    upcoming_game_grid = list_page.css("div.inlineTabs.section.gameGrid")[1]
+    upcoming_games = upcoming_game_grid.css("ul.clearfix li.layout-type-1 div.tile.clearfix div.game-tile-details h2 a.title")
 
+    self.iterate_over_games_XML(upcoming_games)
   end
 
 
 
 end
 
-RecentlyPs4Games::Scraper.new.class.scrape_new_list("https://www.playstation.com/en-us/explore/games/ps4-games/")
+RecentlyPs4Games::Scraper.new.class.scrape_upcoming_list("https://www.playstation.com/en-us/explore/games/ps4-games/")
