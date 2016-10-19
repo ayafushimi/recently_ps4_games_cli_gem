@@ -23,9 +23,10 @@ class RecentlyPs4Games::Scraper
     game_grid = list_page.css("div.inlineTabs.section.gameGrid").first
 
     binding.pry
-    # list_page.css("div.gameGrid")
-    # game = game_grid.css("ul.clearfix li.layout-type-1")
-
+    
+    # new_game = game_grid.css("ul.clearfix li.layout-type-1").first
+    # title = new_game.css("div.game-tile-details h2 a.title").text
+    # detail_url = new_game.css("div.game-tile-details h2 a.title").attr("href").value
 
   end
 
