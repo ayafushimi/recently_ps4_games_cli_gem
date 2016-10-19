@@ -45,21 +45,18 @@ class RecentlyPs4Games::Scraper
 
   def self.scrape_details(url)
     detail_page = Nokogiri::HTML(open(url))
+    prod_meta = detail_page.css("div.prod-meta")
+    release_info = prod_meta.css("ul.release-info li")
 
-    binding.pry
+    details = {
+      discription: prod_meta.css("p.teaser").text,
+      release_date: release_info.css("span.releasedate").text.delete("\n\t"),
+      genre: release_info[1].children[2].text.delete("\n\t"),
+      publisher: release_info[2].children[1].text.delete("\n\t"),
+      developer: release_info[3].children[1].text.delete("\n\t")
+    }
 
-    # prod_meta = detail_page.css("div.prod-meta")
-
-    # discription : prod_meta.css("p.teaser").text
-    # release_info : prod_meta.css("ul.release-info li")
-    # Release Date : release_info.css("span.releasedate").text.delete("\n\t")
-    # Genre : release_info[1].children[2].text.delete("\n\t")
-    # Publisher : release_info[2].children[1].text.delete("\n\t")
-    # Developer : release_info[3].children[1].text.delete("\n\t")
-
+    details
   end
 
-
 end
-
-RecentlyPs4Games::Scraper.new.class.scrape_details("https://www.playstation.com/en-us/games/rise-of-the-tomb-raider-20-year-celebration-ps4/")

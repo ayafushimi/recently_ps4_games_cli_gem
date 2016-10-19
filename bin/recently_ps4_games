@@ -13,7 +13,7 @@ RecentlyPs4Games::CLI.new.call
     # detail page url
 # display list of games
 # ask input for what game to inquire
-# Scrape game's detail page -- making --
+# Scrape game's detail page -- DONE --
   # get informations
     # discription
     # Release Date
