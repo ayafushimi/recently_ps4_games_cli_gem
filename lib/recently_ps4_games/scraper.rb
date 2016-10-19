@@ -9,10 +9,17 @@ end
 
 
 class RecentlyPs4Games::Scraper
+
+  def self.get_dynamic_page_html(url)
+    Selenium::WebDriver::PhantomJS.path = Phantomjs.path
+    browser = Watir::Browser.new(:phantomjs)
+    browser.goto url
+    browser.html
+  end
+
   def self.scrape_new_list(url)
     games = []
-    browser = Watir::Browser.new(:phantomjs)
-    list_page = Nokogiri::HTML(open(url))
+    list_page = Nokogiri::HTML(self.get_list_page_html(url))
     game_grid = list_page.css("div.inlineTabs.section.gameGrid").first
 
     binding.pry
