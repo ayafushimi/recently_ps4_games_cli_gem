@@ -19,7 +19,7 @@ class RecentlyPs4Games::Scraper
 
   def self.scrape_new_list(url)
     games = []
-    list_page = Nokogiri::HTML(self.get_list_page_html(url))
+    list_page = Nokogiri::HTML(self.get_dynamic_page_html(url))
     game_grid = list_page.css("div.inlineTabs.section.gameGrid").first
 
     binding.pry
