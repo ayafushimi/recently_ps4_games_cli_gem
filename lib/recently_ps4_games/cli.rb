@@ -31,6 +31,12 @@ class RecentlyPs4Games::Cli
     end
   end
 
+  def get_detail(id)
+    game = RecentlyPs4Games::Game.find_by_id(id)
+    detail = RecentlyPs4Games::Scraper.scrape_details(game.detail_url)
+    game.add_attributes(detail)
+  end
+
   def display_detail(student)
 
   end
