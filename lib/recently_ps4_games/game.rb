@@ -19,14 +19,12 @@ class RecentlyPs4Games::Game
     games_arr.each do |game|
       self.new(game)
     end
-
-    binding.pry
   end
 
-  def self.get_detail_url_from_id(id)
+  def self.find_by_id(id)
     self.all.detect do |game|
       game.id == id
-    end.detail_url
+    end
   end
 
   def add_attributes(details_hash)
@@ -34,10 +32,10 @@ class RecentlyPs4Games::Game
       self.send("#{k}=", v)
     end
     self
+    binding.pry
   end
 
   def self.all
     @@all
   end
-
 end
