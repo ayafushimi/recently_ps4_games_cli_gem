@@ -10,31 +10,21 @@ class RecentlyPs4Games::Scraper
     browser.html
   end
 
-  def self.iterate_over_games_XML(games_XML)
+  def self.scrape_game_list
     games_arr = []
-    games_XML.each do |game|
-      games_arr << {
-        title: game.text,
-        detail_url: game.attr("href")
-      }
+    list_page = Nokogiri::HTML(self.get_dynamic_page_html)
+    game_grids = list_page.css("div.inlineTabs.section.gameGrid")
+    game_grids.each do |game_grid|
+      games = game_grid.css("ul.clearfix li.layout-type-1 div.tile.clearfix div.game-tile-details h2 a.title")
+      games.each do |game|
+        games_arr << {
+          title: game.text,
+          detail_url: game.attr("href")
+        }
+      end
     end
     games_arr
-  end
-
-  def self.scrape_new_list
-    list_page = Nokogiri::HTML(self.get_dynamic_page_html)
-    new_game_grid = list_page.css("div.inlineTabs.section.gameGrid").first
-    new_games = new_game_grid.css("ul.clearfix li.layout-type-1 div.tile.clearfix div.game-tile-details h2 a.title")
-
-    self.iterate_over_games_XML(new_games)
-  end
-
-  def self.scrape_upcoming_list
-    list_page = Nokogiri::HTML(self.get_dynamic_page_html)
-    upcoming_game_grid = list_page.css("div.inlineTabs.section.gameGrid")[1]
-    upcoming_games = upcoming_game_grid.css("ul.clearfix li.layout-type-1 div.tile.clearfix div.game-tile-details h2 a.title")
-
-    self.iterate_over_games_XML(upcoming_games)
+    binding.pry
   end
 
   def self.scrape_details(url)

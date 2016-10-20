@@ -9,6 +9,12 @@ class RecentlyPs4Games::Cli
     puts "...now makinging games list..."
     make_games # as Game Instance
     interact_with_user # display list, ask input, display details
+    puts "Bye!"
+  end
+
+  def make_games
+    games_arr = RecentlyPs4Games::Scraper.scrape_new_list
+    RecentlyPs4Games::Game.create_by_games_arr(games_arr)
   end
 
 end
