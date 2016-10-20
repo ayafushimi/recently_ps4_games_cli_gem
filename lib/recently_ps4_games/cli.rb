@@ -19,9 +19,7 @@ class RecentlyPs4Games::Cli
 
   def interact_with_user
     display_list
-    ask_what_to_detail
-    get_detail
-    display_detail
+    display_detail(get_detail(ask_what_to_detail))
     interact_with_user unless ask_exit?
   end
 
@@ -37,8 +35,18 @@ class RecentlyPs4Games::Cli
     game.add_attributes(detail)
   end
 
-  def display_detail(student)
-
+  def display_detail(game)
+    puts "-------------------------------"
+    puts ""
+    puts "#{game.id}. \e[1m#{game.title}"
+    puts "#{discription}"
+    puts ""
+    puts "\e[1mRelease date:\e[0m #{game.release_date}"
+    puts "\e[1mGenre       :\e[0 #{game.genre}"
+    puts "\e[1mPublisher   :\e[0 #{game.publisher}"
+    puts "\e[1mDeveloper   :\e[0 #{game.developer}"
+    puts ""
+    puts "-------------------------------"
   end
 
 end
