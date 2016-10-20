@@ -29,6 +29,12 @@ class RecentlyPs4Games::Cli
     end
   end
 
+  def ask_what_to_detail
+    puts "What game would you like to get details?"
+    puts "Please input NUMBER."
+    input = gets.strip.to_i
+  end
+
   def get_detail(id)
     game = RecentlyPs4Games::Game.find_by_id(id)
     detail = RecentlyPs4Games::Scraper.scrape_details(game.detail_url)

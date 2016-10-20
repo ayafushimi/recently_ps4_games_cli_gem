@@ -24,7 +24,6 @@ class RecentlyPs4Games::Scraper
       end
     end
     games_arr
-    binding.pry
   end
 
   def self.scrape_details(url)
