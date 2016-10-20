@@ -24,7 +24,7 @@ RecentlyPs4Games::CLI.new.call
     # Genre
     # Publisher
     # Developer
-# add attribute to Game instance
+# add attribute to Game instance -- DONE --
 # display details
   # use Game method
 # ask whether exit or list again

@@ -3,10 +3,10 @@ end
 
 class RecentlyPs4Games::Scraper
 
-  def self.get_dynamic_page_html(url)
+  def self.get_dynamic_page_html
     Selenium::WebDriver::PhantomJS.path = Phantomjs.path
     browser = Watir::Browser.new(:phantomjs)
-    browser.goto url
+    browser.goto "https://www.playstation.com/en-us/explore/games/ps4-games/"
     browser.html
   end
 
@@ -21,16 +21,16 @@ class RecentlyPs4Games::Scraper
     games_arr
   end
 
-  def self.scrape_new_list(url)
-    list_page = Nokogiri::HTML(self.get_dynamic_page_html(url))
+  def self.scrape_new_list
+    list_page = Nokogiri::HTML(self.get_dynamic_page_html)
     new_game_grid = list_page.css("div.inlineTabs.section.gameGrid").first
     new_games = new_game_grid.css("ul.clearfix li.layout-type-1 div.tile.clearfix div.game-tile-details h2 a.title")
 
     self.iterate_over_games_XML(new_games)
   end
 
-  def self.scrape_upcoming_list(url)
-    list_page = Nokogiri::HTML(self.get_dynamic_page_html(url))
+  def self.scrape_upcoming_list
+    list_page = Nokogiri::HTML(self.get_dynamic_page_html)
     upcoming_game_grid = list_page.css("div.inlineTabs.section.gameGrid")[1]
     upcoming_games = upcoming_game_grid.css("ul.clearfix li.layout-type-1 div.tile.clearfix div.game-tile-details h2 a.title")
 

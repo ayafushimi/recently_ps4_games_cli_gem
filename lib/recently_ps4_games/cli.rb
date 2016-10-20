@@ -4,6 +4,9 @@ end
 
 class RecentlyPs4Games::Cli
 
+  def call
+    
+  end
 
 end
 
