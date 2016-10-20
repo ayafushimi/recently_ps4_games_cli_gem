@@ -23,6 +23,12 @@ class RecentlyPs4Games::Cli
     interact_with_user unless ask_exit?
   end
 
+  def display_list
+    RecentlyPs4Games::Game.all.each do |game|
+      puts "#{game.id}. #{game.title}"
+    end
+  end
+
 end
 
 # games_arr = RecentlyPs4Games::Scraper.scrape_new_list("https://www.playstation.com/en-us/explore/games/ps4-games/")
