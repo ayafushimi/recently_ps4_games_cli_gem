@@ -19,7 +19,9 @@ class RecentlyPs4Games::Cli
 
   def interact_with_user
     display_list
-    display_detail(ask_what_to_detail)
+    ask_what_to_detail
+    get_detail
+    display_detail
     interact_with_user unless ask_exit?
   end
 
@@ -27,6 +29,10 @@ class RecentlyPs4Games::Cli
     RecentlyPs4Games::Game.all.each do |game|
       puts "#{game.id}. #{game.title}"
     end
+  end
+
+  def display_detail(student)
+
   end
 
 end
