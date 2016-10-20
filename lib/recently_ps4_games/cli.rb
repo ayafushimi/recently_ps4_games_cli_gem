@@ -13,7 +13,7 @@ class RecentlyPs4Games::Cli
   end
 
   def make_games
-    games_arr = RecentlyPs4Games::Scraper.scrape_new_list
+    games_arr = RecentlyPs4Games::Scraper.scrape_game_list
     RecentlyPs4Games::Game.create_by_games_arr(games_arr)
   end
 
