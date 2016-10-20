@@ -1,3 +1,6 @@
+module RecentlyPs4Games
+end
+
 class RecentlyPs4Games::Scraper
 
   def self.get_dynamic_page_html(url)
