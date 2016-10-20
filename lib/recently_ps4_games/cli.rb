@@ -19,9 +19,8 @@ class RecentlyPs4Games::Cli
 
   def interact_with_user
     display_list
-    ask_what_to_detail
-    display_detail
-    ask_exit # n -> interact_with_user
+    display_detail(ask_what_to_detail)
+    interact_with_user unless ask_exit?
   end
 
 end
