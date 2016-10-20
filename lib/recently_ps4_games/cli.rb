@@ -17,6 +17,13 @@ class RecentlyPs4Games::Cli
     RecentlyPs4Games::Game.create_by_games_arr(games_arr)
   end
 
+  def interact_with_user
+    display_list
+    ask_what_to_detail
+    display_detail
+    ask_exit # n -> interact_with_user
+  end
+
 end
 
 # games_arr = RecentlyPs4Games::Scraper.scrape_new_list("https://www.playstation.com/en-us/explore/games/ps4-games/")
