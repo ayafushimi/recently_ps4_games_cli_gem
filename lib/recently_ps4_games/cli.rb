@@ -33,6 +33,11 @@ class RecentlyPs4Games::Cli
     puts "What game would you like to get details?"
     puts "Please input NUMBER."
     input = gets.strip.to_i
+    until input.between?(1, RecentlyPs4Games::Game.all.size) do
+      puts "Please input valid NUMBER."
+      input = gets.strip.to_i
+    end
+    input
   end
 
   def get_detail(id)
