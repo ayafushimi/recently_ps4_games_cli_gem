@@ -1,7 +1,3 @@
-module RecentlyPs4Games
-end
-
-
 class RecentlyPs4Games::Cli
 
   def call
@@ -47,17 +43,18 @@ class RecentlyPs4Games::Cli
   end
 
   def display_detail(game)
-    puts "-------------------------------"
-    puts ""
-    puts "#{game.id}. \e[1m#{game.title}"
-    puts "#{discription}"
-    puts ""
-    puts "\e[1mRelease date:\e[0m #{game.release_date}"
-    puts "\e[1mGenre       :\e[0 #{game.genre}"
-    puts "\e[1mPublisher   :\e[0 #{game.publisher}"
-    puts "\e[1mDeveloper   :\e[0 #{game.developer}"
     puts ""
     puts "-------------------------------"
+    puts "\e[1m#{game.id}. #{game.title}\e[0m"
+    puts ""
+    puts "#{game.discription}"
+    puts ""
+    puts "\e[2mRelease date : \e[0m #{game.release_date}"
+    puts "\e[2mGenre        : \e[0m #{game.genre}"
+    puts "\e[2mPublisher    : \e[0m #{game.publisher}"
+    puts "\e[2mDeveloper    : \e[0m #{game.developer}"
+    puts "-------------------------------"
+    puts ""
   end
 
   def ask_exit?
@@ -72,14 +69,7 @@ class RecentlyPs4Games::Cli
       true
     elsif input == "n"
       false
-    end 
+    end
   end
 
 end
-
-# games_arr = RecentlyPs4Games::Scraper.scrape_new_list("https://www.playstation.com/en-us/explore/games/ps4-games/")
-#
-# RecentlyPs4Games::Game.create_by_games_arr(games_arr)
-# game = RecentlyPs4Games::Game.find_by_id(2)
-# details = RecentlyPs4Games::Scraper.scrape_details(game.detail_url)
-# game.add_attributes(details)

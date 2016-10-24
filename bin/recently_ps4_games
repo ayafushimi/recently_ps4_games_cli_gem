@@ -2,29 +2,4 @@
 
 require_relative '../lib/recently_ps4_games.rb'
 
-RecentlyPs4Games::CLI.new.call
-
-
-# # Draft
-# start
-# Scrape games list page -- DONE --
-  # get informations of NEW and UPCOMING games
-    # title
-    # detail page url
-# Make game instances -- DONE --
-# display list of games
-  # use Game method
-# ask input for what game to inquire
-# Send request to Scraper class
-  # use Game method
-# Scrape game's detail page -- DONE --
-  # get informations
-    # discription
-    # Release Date
-    # Genre
-    # Publisher
-    # Developer
-# add attribute to Game instance -- DONE --
-# display details
-  # use Game method
-# ask whether exit or list again
+RecentlyPs4Games::Cli.new.call

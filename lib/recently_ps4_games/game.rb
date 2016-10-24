@@ -1,6 +1,3 @@
-module RecentlyPs4Games
-end
-
 class RecentlyPs4Games::Game
   attr_accessor :id, :title, :detail_url, :discription, :release_date, :genre, :publisher, :developer
 
@@ -32,7 +29,6 @@ class RecentlyPs4Games::Game
       self.send("#{k}=", v)
     end
     self
-    binding.pry
   end
 
   def self.all
