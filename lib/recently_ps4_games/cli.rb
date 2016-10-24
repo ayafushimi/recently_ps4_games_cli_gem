@@ -60,6 +60,21 @@ class RecentlyPs4Games::Cli
     puts "-------------------------------"
   end
 
+  def ask_exit?
+    puts "Do you want to exit? (y/n)"
+    input = gets.strip
+    until input == "y" || input == "n" do
+      puts "Do you want to exit? (y/n)"
+      puts "Please input 'y' to exit, 'n' to continue."
+      input = gets.strip
+    end
+    if input == "y"
+      true
+    elsif input == "n"
+      false
+    end 
+  end
+
 end
 
 # games_arr = RecentlyPs4Games::Scraper.scrape_new_list("https://www.playstation.com/en-us/explore/games/ps4-games/")
