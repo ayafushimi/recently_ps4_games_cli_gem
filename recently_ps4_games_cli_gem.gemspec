@@ -9,19 +9,10 @@ Gem::Specification.new do |spec|
   spec.authors       = ["ayafushimi"]
   spec.email         = ["aya.fushimi@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Recently PS4 Games}
+  spec.description   = %q{With this gem, you can see the lists of new and upcoming PS4 games and inquire the details in CLI.}
+  spec.homepage      = "https://github.com/ayafushimi/recently_ps4_games_cli_gem"
   spec.license       = "MIT"
-
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
-  end
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
