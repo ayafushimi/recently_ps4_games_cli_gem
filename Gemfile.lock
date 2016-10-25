@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    recently_ps4_games (0.1.2)
-      nokogiri
+    recently_ps4_games (0.1.7)
+      nokogiri (~> 1.6)
       phantomjs (~> 2.1)
       watir-webdriver (~> 0.9)
 
