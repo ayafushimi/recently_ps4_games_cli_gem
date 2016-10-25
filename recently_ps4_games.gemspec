@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'recently_ps4_games_cli_gem/version'
+require 'recently_ps4_games/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "recently_ps4_games_cli_gem"

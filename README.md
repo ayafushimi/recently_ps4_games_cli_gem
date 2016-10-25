@@ -7,7 +7,7 @@ With this gem, you can see the lists of new and upcoming PS4 games and inquire t
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'recently_ps4_games_cli_gem'
+gem 'recently_ps4_games'
 ```
 
 And then execute:
@@ -16,13 +16,13 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install recently_ps4_games_cli_gem
+    $ gem install recently_ps4_games
 
 ## Usage
 
 Enter the below command after Installation and follow the on screen prompts.
 
-  $ worlds-best-restaurants
+  $ recently_ps4_games
 
 ## Development
 
@@ -32,7 +32,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/recently_ps4_games_cli_gem. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ayafushimi/recently_ps4_games_cli_gem. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
