@@ -1,8 +1,6 @@
-# RecentlyPs4GamesCliGem
+# Recently Ps4 Games
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/recently_ps4_games_cli_gem`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+With this gem, you can see the lists of new and upcoming PS4 games and inquire the details in CLI.
 
 ## Installation
 
@@ -38,4 +36,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
