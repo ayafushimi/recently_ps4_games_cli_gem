@@ -14,9 +14,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/ayafushimi/recently_ps4_games_cli_gem"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
-    f.match(%r{^(test|spec|features)/})
-  end
+  spec.files         = ["lib/recently_ps4_games.rb", "lib/recently_ps4_games/cli.rb", "lib/recently_ps4_games/game.rb", "lib/recently_ps4_games/scraper.rb", "lib/recently_ps4_games/version.rb"]
+
   spec.bindir        = "bin"
   spec.executables   << "recently_ps4_games"
   spec.require_paths = ["lib"]
