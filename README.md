@@ -20,7 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Enter the below command after Installation and follow the on screen prompts.
+
+  $ worlds-best-restaurants
 
 ## Development
 
