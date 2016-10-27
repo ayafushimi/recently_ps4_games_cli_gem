@@ -3,8 +3,8 @@ class RecentlyPs4Games::Cli
   def call
     puts "Welcome to recently_ps4_games!!"
     puts "...now makinging games list..."
-    make_games # as Game Instance
-    interact_with_user # display list, ask input, display details
+    make_games
+    interact_with_user
     puts "Bye!"
   end
 
