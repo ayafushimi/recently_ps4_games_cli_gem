@@ -3,14 +3,9 @@ class RecentlyPs4Games::Cli
   def call
     puts "Welcome to recently_ps4_games!!"
     puts "...now makinging games list..."
-    make_games
+    RecentlyPs4Games::Scraper.scrape_game_list
     interact_with_user
     puts "Bye!"
-  end
-
-  def make_games
-    games_arr = RecentlyPs4Games::Scraper.scrape_game_list
-    RecentlyPs4Games::Game.create_by_games_arr(games_arr)
   end
 
   def interact_with_user
@@ -38,8 +33,7 @@ class RecentlyPs4Games::Cli
 
   def get_detail(id)
     game = RecentlyPs4Games::Game.find_by_id(id)
-    detail = RecentlyPs4Games::Scraper.scrape_details(game.detail_url)
-    game.add_attributes(detail)
+    RecentlyPs4Games::Scraper.scrape_details(game)
   end
 
   def display_detail(game)

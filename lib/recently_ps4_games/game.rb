@@ -7,15 +7,8 @@ class RecentlyPs4Games::Game
     game_hash.each do |k, v|
       self.send("#{k}=", v)
     end
+    @id = (@@all.size + 1)
     @@all << self
-    @id = @@all.size
-    self
-  end
-
-  def self.create_by_games_arr(games_arr)
-    games_arr.each do |game|
-      self.new(game)
-    end
   end
 
   def self.find_by_id(id)
@@ -28,7 +21,6 @@ class RecentlyPs4Games::Game
     details_hash.each do |k, v|
       self.send("#{k}=", v)
     end
-    self
   end
 
   def self.all
